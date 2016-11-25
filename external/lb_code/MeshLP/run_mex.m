@@ -1,0 +1,2 @@
+mex -lmat -leng -lut -lmx  -licuuc -licudata -licui18n -licuio -lhdf5 -lpthread cotlpmatrix.cpp tmesh.cpp comp_meshlpmatrix.cpp meshlpmatrix.cpp offobj.cpp point.cpp matrix.cpp
+mex -lmat -leng -lut -lmx  -licuuc -licudata -licui18n -licuio -lhdf5 symmshlpmatrix.Cpp tmesh.cpp comp_meshlpmatrix.cpp meshlpmatrix.cpp offobj.cpp point.cpp matrix.cpp
