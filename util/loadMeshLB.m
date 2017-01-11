@@ -34,14 +34,15 @@ else
     if exist([meshname '.mat'],'file')==2
         % Loads a struct called "surface" with elements X, Y, Z, TRIV
         s = load([meshname '.mat']);
-        load('triangles.mat');
-        mesh.triangles = tl;
-        mesh.vertices = double(s.shape');
-      mesh.texture = double(s.tex');
+       % load('triangles.mat');
+    
+        %mesh.triangles = tl;
+        %mesh.vertices = double(s.shape');
+      %mesh.texture = double(s.tex');
         % high-def
-       % mesh.triangles = s.FV.faces;
-       % mesh.vertices = s.FV.vertices;
-       % mesh.texture = s.FV.facevertexcdata;
+        mesh.triangles = s.FV.faces;
+        mesh.vertices = s.FV.vertices;
+        mesh.texture = s.FV.facevertexcdata;
         
         %mesh.triangles = s.surface.TRIV;
         %mesh.vertices = [s.surface.X s.surface.Y s.surface.Z];

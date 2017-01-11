@@ -22,6 +22,7 @@ path(path,'external/voronoi-laplace');
 path(path,'external/voronoi-laplace/functions');
 path(path,'external/voronoi-laplace/GLtree3DMex');
 path(path,'external');
+path(path,'cache/');
 addpath(genpath('/local/sda7/cz679/myToolbox/manopt'));
 %setup your path to manopt
 
@@ -58,7 +59,7 @@ for i=1:Nsets
         elseif i~=j
             name1 = dataList{i};
             name2 = dataList{j};
-            fmap_name = ['../benchmark/3DREFFmaps/',name2,'_to_',name1,'_d',num2str(Ndims),'_10pt.mat'];
+            fmap_name = [name2,'_to_',name1,'_d',num2str(Ndims),'_10pt.mat'];
             if ~exist(fmap_name, 'file')
                 % compute pairwise map
                 Fmaps{i,j} = getMapofTwoFaceShapes( name2, name1, Ndims );
@@ -192,9 +193,9 @@ end
 
 
 %% show ICP results
-j = 3;
+j = 1;
 i = 2;
-k = 1;
+k = 3;
 h = figure;
 mesh1 = loadMeshLB(dataList{j}, Ndims);
 mesh2 = loadMeshLB(dataList{i}, Ndims);
