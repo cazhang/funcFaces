@@ -18,6 +18,7 @@ path(path,'external/lb_code/');
 path(path,'external/lb_code/MeshLP');
 path(path,'external/matlab_bgl');
 path(path,'external/ann_mwrapper');
+addpath(genpath('external/ann_mwrapper'))
 path(path,'external/voronoi-laplace');
 path(path,'external/voronoi-laplace/functions');
 path(path,'external/voronoi-laplace/GLtree3DMex');
@@ -35,7 +36,7 @@ nn_method = 'ann';
 % set the basis dimension
 Ndims = 30;
 % set iters for ICP
-nICP = 10;
+nICP = 5;
 classID = 1;
 % number of data
 Nsets = 3;
@@ -126,7 +127,7 @@ gwFunmapProblem.grad = @(X) gwFunmapProblem.M.egrad2rgrad(X, gwFunmapGrad(X, P, 
 
 % Pick an algorithm to solve the problem
 options_GWFunc = [];
-options_GWFunc.maxiter = 60;
+options_GWFunc.maxiter = 200;
 %options.tolgradnorm = 1e-20;
 Xsol = cell(3,1);
 % pairwise func.map init
@@ -137,7 +138,7 @@ fprintf('Group Running time is: %g\n', toc(t));
 
 %% Group ICP process
 options_GWicp = [];
-options_GWicp.maxiter = 30;
+options_GWicp.maxiter = 50;
 options_GWicp.step = 10;
 gwIcpProblem.M = M;
 

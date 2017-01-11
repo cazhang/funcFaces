@@ -72,8 +72,8 @@ fprintf(1, 'Writing descriptors in provided basis...\n');
 F = descriptorsToCoeffs(f, basis1);
 G = descriptorsToCoeffs(g, basis2);
 
-fprintf(1, 'Re-weighting descriptors...\n');
-[F, G] = reweighDescriptors(F, G, numEig, options);
+%fprintf(1, 'Re-weighting descriptors...\n');
+%[F, G] = reweighDescriptors(F, G, numEig, options);
 
 %%%%%%%%% Operator commutativity
 options.operators = {};
